@@ -1,13 +1,12 @@
 .characterEditor {
   padding-top: 128px;
   padding-bottom: 64px;
-}
-
-.maxWidthWrapper {
+  isolation: isolate;
 }
 
 .header {
   padding-bottom: 64px;
+  width: 65%;
 }
 
 .title {
@@ -23,8 +22,38 @@
   margin: 0;
 }
 
-.characterWrapper {
+
+@media screen and (min-width:800px){
+  .characterWrapper {
+    width: 40%;
+    position: fixed;
+    right: 0;
+    top: 200px;
+    min-height: 500px;
+  }
+  .controlColumn {
+    width: 50%;
+  }
+
 }
 
-.controlColumn {
+@media screen and (max-width: 799px) {
+  .characterWrapper {
+    height: 500px;
+  }
+
+  .controlColumn {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: -200px;
+  }
+}
+
+.backgroundBlock{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-color: hsl(195deg, 20%, 86%);
 }
